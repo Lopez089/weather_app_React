@@ -1,13 +1,14 @@
-
+import { Nav, Localition, Weather, Forecast } from './components'
 
 function App() {
 
   return (
-    <div >
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
+    <div className="bg-slate-700 h-screen text-cyan-50 px-4 ">
+      <Nav />
+      <Localition />
+      <Weather />
+      <Forecast />
+    </div >
   )
 }
 

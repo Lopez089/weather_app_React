@@ -1,0 +1,39 @@
+{
+    "location": {
+        "city": "New York",
+            "country": "USA",
+                "latitude": 40.7128,
+                    "longitude": 74.0060
+    },
+    "current_weather": {
+        "temperature": 10.4,
+            "summary": "Partly cloudy",
+                "icon": "partly-cloudy-day",
+                    "humidity": 0.72,
+                        "pressure": 1013,
+                            "wind_speed": 5.7
+    },
+    "forecast": [
+        {
+            "date": "2023-02-10",
+            "temperature_min": 5.0,
+            "temperature_max": 12.0,
+            "summary": "Mostly cloudy",
+            "icon": "cloudy"
+        },
+        {
+            "date": "2023-02-11",
+            "temperature_min": 2.0,
+            "temperature_max": 8.0,
+            "summary": "Rain",
+            "icon": "rain"
+        },
+        {
+            "date": "2023-02-12",
+            "temperature_min": -1.0,
+            "temperature_max": 3.0,
+            "summary": "Snow",
+            "icon": "snow"
+        }
+    ]
+}
