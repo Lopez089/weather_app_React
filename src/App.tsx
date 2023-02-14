@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Nav, Localition, Weather, Forecast } from './components'
-import { Location, CurrentWeather } from './model'
+import { Location, CurrentWeather, Forecast as IForecast } from './model'
 import axios from 'axios'
 
 const getData = async () => {
@@ -13,7 +13,7 @@ const getData = async () => {
 
 const useWeather = (): IWeather | null => {
   const [weather, setWeather] = useState<IWeather | null>(null)
-
+  console.log(weather)
   useEffect(() => {
     getData()
       .then(res => setWeather(res))
@@ -23,12 +23,14 @@ const useWeather = (): IWeather | null => {
     {
       location: weather.location,
       current_weather: weather.current_weather,
+      forecast: weather.forecast
     } : null
 }
 
 interface IWeather {
   location: Pick<Location, 'city' | 'country'>
   current_weather: Pick<CurrentWeather, 'summary' | 'temperature' | 'windSpeed' | 'icon'>
+  forecast: IForecast
 }
 
 function App() {
@@ -52,7 +54,7 @@ function App() {
               icon={weather!.current_weather.icon}
 
             />
-            <Forecast />
+            <Forecast forecast={weather!.forecast} />
           </>
 
         ) : <h3>Loading...</h3>

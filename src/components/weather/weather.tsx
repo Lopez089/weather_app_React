@@ -3,21 +3,21 @@ import { CurrentWeather } from '../../model'
 
 type IWeather = Pick<CurrentWeather, 'summary' | 'temperature' | 'windSpeed' | 'icon'>
 
-
+export const Icon = {
+    'clear-day': 'clear_day',
+    'clear-night': 'clear_night',
+    rain: 'rainy',
+    snow: 'snowing',
+    sleet: 'weather_snowy',
+    wind: 'air',
+    fog: 'water',
+    cloudy: 'cloudy',
+    "partly-cloudy-day": 'partly_cloudy_day',
+    "partly-cloudy-night": 'nights_stay'
+}
 export function Weather({ summary, temperature, windSpeed, icon }: IWeather) {
-    const Icon = {
-        'clear-day': 'clear_day',
-        'clear-night': 'clear_night',
-        rain: 'rainy',
-        snow: 'snowing',
-        sleet: 'weather_snowy',
-        wind: 'air',
-        fog: 'water',
-        cloudy: 'cloudy',
-        "partly-cloudy-day": 'partly_cloudy_day',
-        "partly-cloudy-night": 'nights_stay'
-    }
-    console.log(Icon['clear-day'])
+
+
     return (
         <>
             <div className='h-60 flex flex-col justify-center items-center'>
