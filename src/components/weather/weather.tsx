@@ -1,14 +1,31 @@
 import React from 'react'
+import { CurrentWeather } from '../../model'
 
-export function Weather() {
+type IWeather = Pick<CurrentWeather, 'summary' | 'temperature' | 'windSpeed' | 'icon'>
+
+
+export function Weather({ summary, temperature, windSpeed, icon }: IWeather) {
+    const Icon = {
+        'clear-day': 'clear_day',
+        'clear-night': 'clear_night',
+        rain: 'rainy',
+        snow: 'snowing',
+        sleet: 'weather_snowy',
+        wind: 'air',
+        fog: 'water',
+        cloudy: 'cloudy',
+        "partly-cloudy-day": 'partly_cloudy_day',
+        "partly-cloudy-night": 'nights_stay'
+    }
+    console.log(Icon['clear-day'])
     return (
         <>
             <div className='h-60 flex flex-col justify-center items-center'>
                 <span className='mb-6 material-symbols-outlined font-thin text-8xl'>
-                    sunny
+                    {Icon[icon]}
                 </span>
-                <p className='font-normal text-6xl '>24º</p>
-                <p>Partly cloudy</p>
+                <p className='font-normal text-6xl '>{`${temperature}º`}</p>
+                <p>{summary}</p>
 
             </div>
             <div className='mt-4 flex flex-col justify-center items-center '>
@@ -17,7 +34,7 @@ export function Weather() {
                     <span className=' mr-2  material-symbols-outlined font-extralight text-3xl'>
                         air
                     </span>
-                    5.7 km/h
+                    {`${windSpeed} km/h`}
                     <p className='text-base'>
                     </p>
                 </div>
